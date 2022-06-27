@@ -59,20 +59,18 @@ int readPotentiometer()
 
 void runPump(int runsec)
 {
-  if (digitalRead(indicatorLED) == LOW)
+  if (digitalRead(pumpPin) == LOW)
   {
     Serial.println(". Starting water pump.");
 
     digitalWrite(pumpPin, HIGH);
     digitalWrite(indicatorLED, HIGH);
-  }
-  //delay(runsec * 1000);
-  
+  }  
 }
 
 void stopPump()
 {
-  if (digitalRead(indicatorLED) == HIGH)
+  if (digitalRead(pumpPin) == HIGH)
   {
     Serial.println("Stopping water pump");
     digitalWrite(pumpPin, LOW);
